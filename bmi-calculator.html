@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eaf7fd">
+  <title>BMI Calculator — Body Mass Index</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="bmi-calculator.css">
+</head>
+<body>
+  <main>
+    <section class="bmi-hero">
+      <a class="bmi-logo" href="#top" aria-label="BMI calculator home"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21"/><path d="M8 17c9-5 23-5 32 0M6 23c10-5 26-5 36 0M7 29c10-5 24-5 34 0M11 35c8-4 18-4 26 0M12 13c8 4 16 4 24 0M12 36c8-4 16-4 24 0"/></svg></a>
+      <div class="hero-inner" id="top">
+        <div class="hero-copy"><p class="eyebrow">A simple health screening tool</p><h1>Body Mass<br>Index Calculator</h1><p>Better understand your weight in relation to your height using our body mass index (BMI) calculator. BMI is one measure of body size and can be a helpful starting point for a conversation about health.</p></div>
+        <form class="calculator" novalidate>
+          <h2>Enter your details below</h2>
+          <fieldset class="unit-switch"><legend class="sr-only">Measurement units</legend><label><input type="radio" name="units" value="metric" checked><span class="radio-ui"></span>Metric</label><label><input type="radio" name="units" value="imperial"><span class="radio-ui"></span>Imperial</label></fieldset>
+          <div class="measure-fields metric-fields"><label class="measure">Height<span class="input-wrap"><input id="height-cm" type="number" min="1" step="any" placeholder="0" inputmode="decimal"><b>cm</b></span></label><label class="measure">Weight<span class="input-wrap"><input id="weight-kg" type="number" min="1" step="any" placeholder="0" inputmode="decimal"><b>kg</b></span></label></div>
+          <div class="measure-fields imperial-fields" hidden><label class="measure">Height<span class="dual-input"><span class="input-wrap"><input id="height-ft" type="number" min="0" step="1" placeholder="0" inputmode="numeric"><b>ft</b></span><span class="input-wrap"><input id="height-in" type="number" min="0" max="11.9" step="any" placeholder="0" inputmode="decimal"><b>in</b></span></span></label><label class="measure">Weight<span class="input-wrap"><input id="weight-lb" type="number" min="1" step="any" placeholder="0" inputmode="decimal"><b>lbs</b></span></label></div>
+          <div class="result-card" aria-live="polite"><div class="welcome-result"><h3>Welcome!</h3><p>Enter your height and weight and you’ll see your BMI result here</p></div><div class="calculated-result" hidden><div><p class="result-label">Your BMI is...</p><strong id="bmi-value">0.0</strong></div><div class="result-message"><h3 id="bmi-category">Healthy weight</h3><p id="bmi-guidance"></p></div></div></div>
+          <p class="form-error" role="alert" hidden>Please enter a valid height and weight greater than zero.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="meaning section-shell"><div class="meaning-image"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1100&q=85" alt="Person enjoying an active, healthy lifestyle" loading="lazy"></div><div class="meaning-copy"><p class="eyebrow">Understanding your result</p><h2>What your BMI result means</h2><p>For adults, BMI is grouped into ranges that can be used as a screening measure. A result is only one piece of information and does not account for every difference in body composition or health.</p><p>If you have questions about what your result means for you, a healthcare professional can help put it in context.</p></div></section>
+
+    <section class="habits"><article><span class="habit-icon pink" aria-hidden="true">♧</span><h2>Healthy eating</h2><p>Choose a varied eating pattern that works for your needs, preferences, and daily life.</p></article><article><span class="habit-icon amber" aria-hidden="true">⌁</span><h2>Regular movement</h2><p>Find ways to move that feel comfortable and sustainable for you.</p></article><article><span class="habit-icon aqua" aria-hidden="true">☾</span><h2>Adequate sleep</h2><p>Consistent rest supports everyday wellbeing and recovery.</p></article></section>
+
+    <section class="limitations section-shell"><div class="limitations-copy"><p class="eyebrow">A number is only one part of your health</p><h2>Limitations of BMI</h2><p>Although BMI can be a practical screening measure, it does not directly measure body fat or describe a person’s overall health. It may not reflect differences in muscle mass, age, or individual circumstances.</p><p>Adult BMI ranges are not intended for children and teens. If you are pregnant, or unsure how to interpret a result, ask a healthcare professional for personal guidance.</p></div><div class="limitation-cards"><article><span class="lim-icon coral">♀</span><h3>Age &amp; growth</h3><p>Children and teens need age- and sex-specific BMI charts rather than adult categories.</p></article><article><span class="lim-icon violet">◉</span><h3>Muscle</h3><p>BMI does not distinguish muscle from fat, so it can be less informative for some people.</p></article><article><span class="lim-icon yellow">♡</span><h3>Pregnancy</h3><p>This adult calculator is not designed to assess BMI during pregnancy.</p></article><article><span class="lim-icon teal">✳</span><h3>Individual context</h3><p>Health history and other factors matter when interpreting a screening result.</p></article></div></section>
+    <footer class="bmi-footer"><p>BMI Calculator</p><p>For adults 20 and older. BMI is a screening measure, not a diagnosis.</p></footer>
+  </main>
+  <script src="bmi-calculator.js"></script>
+</body>
+</html>
